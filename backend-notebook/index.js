@@ -14,5 +14,5 @@ app.use('/api/notes', require('./routes/notes'))
 
 
 app.listen(port, () => {
-  console.log(`cNotebook backend listening at http://localhost:${port}`)
+  console.log(`Notebooks backend listening at http://localhost:${port}`)
 })
