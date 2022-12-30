@@ -4,7 +4,7 @@ const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const fetchuser = require('../middleware/fetchuser')
+const fetchuser = require('../middleware/fetchuser');
 
 const JWT_SECRET = 'jamilisab$oy';
 // ROUTE 1: Create a user using:POST endpoint"/api/auth/createuser". No login require
@@ -18,6 +18,7 @@ router.post('/createuser', [
   body('password','Password must be atleast 6 characters').isLength({ min: 6 }),
 ],async (req,res)=>{
     console.log(req.body);
+    
     // if there are errors, return Bad request and Errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

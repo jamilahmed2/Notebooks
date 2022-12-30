@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const NotesSchema = new Schema({
     user:{
-        type: "string",
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
     title:{
@@ -24,4 +24,4 @@ const NotesSchema = new Schema({
     },
   });
 
-  module.exports = mongoose.model('notes', NotesSchema);
+  module.exports = mongoose.model('Notes', NotesSchema);
