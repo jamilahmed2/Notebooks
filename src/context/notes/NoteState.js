@@ -14,6 +14,60 @@ const NoteState = (props)=>{
           "tag": "personal",
           "date": "2022-12-30T22:47:29.628Z",
           "__v": 0
+        },
+        {
+          "_id": "63af6a815a1a66d1630d2685",
+          "user": "63ae45321e861dfe25d6fec5",
+          "title": "new note 2 ",
+          "description": " notes app using reactjs",
+          "tag": "personal",
+          "date": "2022-12-30T22:47:29.628Z",
+          "__v": 0
+        },
+        {
+          "_id": "63af6a815a1a66d1630d2685",
+          "user": "63ae45321e861dfe25d6fec5",
+          "title": "new note 2 ",
+          "description": " notes app using reactjs",
+          "tag": "personal",
+          "date": "2022-12-30T22:47:29.628Z",
+          "__v": 0
+        },
+        {
+          "_id": "63af6a815a1a66d1630d2685",
+          "user": "63ae45321e861dfe25d6fec5",
+          "title": "new note 2 ",
+          "description": " notes app using reactjs",
+          "tag": "personal",
+          "date": "2022-12-30T22:47:29.628Z",
+          "__v": 0
+        },
+        {
+          "_id": "63af6a815a1a66d1630d2685",
+          "user": "63ae45321e861dfe25d6fec5",
+          "title": "new note 2 ",
+          "description": " notes app using reactjs",
+          "tag": "personal",
+          "date": "2022-12-30T22:47:29.628Z",
+          "__v": 0
+        },
+        {
+          "_id": "63af6a815a1a66d1630d2685",
+          "user": "63ae45321e861dfe25d6fec5",
+          "title": "new note 2 ",
+          "description": " notes app using reactjs",
+          "tag": "personal",
+          "date": "2022-12-30T22:47:29.628Z",
+          "__v": 0
+        },
+        {
+          "_id": "63af6a815a1a66d1630d2685",
+          "user": "63ae45321e861dfe25d6fec5",
+          "title": "new note 2 ",
+          "description": " notes app using reactjs",
+          "tag": "personal",
+          "date": "2022-12-30T22:47:29.628Z",
+          "__v": 0
         }
       ]
 
