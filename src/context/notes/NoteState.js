@@ -7,7 +7,7 @@ const NoteState = (props)=>{
     // hardcode for a moment
     const notesInitial = [
         {
-          "_id": "63af6a815a1a66d1630d2685",
+          "_id": "63af62a815a1a66d1630d2685",
           "user": "63ae45321e861dfe25d6fec5",
           "title": "new note 2 ",
           "description": " notes app using reactjs",
@@ -16,7 +16,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "63af6a815a1a66d1630d2685",
+          "_id": "63af63a815a1a66d1630d2685",
           "user": "63ae45321e861dfe25d6fec5",
           "title": "new note 2 ",
           "description": " notes app using reactjs",
@@ -25,7 +25,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "63af6a815a1a66d1630d2685",
+          "_id": "63af6a8154a1a66d1630d2685",
           "user": "63ae45321e861dfe25d6fec5",
           "title": "new note 2 ",
           "description": " notes app using reactjs",
@@ -34,7 +34,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "63af6a815a1a66d1630d2685",
+          "_id": "63af6a8155a1a66d1630d2685",
           "user": "63ae45321e861dfe25d6fec5",
           "title": "new note 2 ",
           "description": " notes app using reactjs",
@@ -43,7 +43,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "63af6a815a1a66d1630d2685",
+          "_id": "63af6a815a61a66d1630d2685",
           "user": "63ae45321e861dfe25d6fec5",
           "title": "new note 2 ",
           "description": " notes app using reactjs",
@@ -52,7 +52,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "63af6a815a1a66d1630d2685",
+          "_id": "63af6a815a1a676d1630d2685",
           "user": "63ae45321e861dfe25d6fec5",
           "title": "new note 2 ",
           "description": " notes app using reactjs",
@@ -61,7 +61,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "63af6a815a1a66d1630d2685",
+          "_id": "63af6a815a1a668d1630d2685",
           "user": "63ae45321e861dfe25d6fec5",
           "title": "new note 2 ",
           "description": " notes app using reactjs",
