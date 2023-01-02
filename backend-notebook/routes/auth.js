@@ -67,6 +67,7 @@ body('email', 'Enter a valid Email').isEmail(),
 body('password', 'Password cannot be blank').exists()
 ],async (req,res)=>{
   
+  let  success =  false;
   // if there are errors, return Bad request and Errors
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -86,7 +87,8 @@ body('password', 'Password cannot be blank').exists()
     // comparing password using bcrypt
     const passwodCompare = await bcrypt.compare(password,user.password);
     if(!passwodCompare){
-      return res.status(400).json({error:"Please try to login with correct credentials"});
+      success =  false
+      return res.status(400).json({success, error:"Please try to login with correct credentials"});
     }
 
     // sending payload(data) for correct credentials
@@ -96,7 +98,8 @@ body('password', 'Password cannot be blank').exists()
       }
     };
     const authToken = jwt.sign(data,JWT_SECRET);
-    res.json({authToken});
+    success =  true
+    res.json({success,authToken});
 
   } catch (error) {
     console.log(error.message);

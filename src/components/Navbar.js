@@ -29,8 +29,8 @@ export const Navbar = () => {
           </li>
         </ul>
         <form className="d-flex my-2 my-lg-0">
-          <input className="form-control me-sm-2" type="text" placeholder="Search"/>
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <Link className="btn btn-primary mx-2" to="/login" role="button">Login</Link>
+          <Link className="btn btn-primary " to="/signup" role="button">Sign up</Link>
         </form>
       </div>
      </div>
