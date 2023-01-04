@@ -8,7 +8,6 @@ const fetchuser = require('../middleware/fetchuser');
 
 const JWT_SECRET = 'jamilisab$oy';
 // ROUTE 1: Create a user using:POST endpoint"/api/auth/createuser". No login require
-
 router.post('/createuser', [
     // user name lenght must be
     body('name', 'Enter a valid Name').isLength({ min: 3 }),
@@ -17,12 +16,11 @@ router.post('/createuser', [
   // password must be at least 6 chars long
   body('password','Password must be atleast 6 characters').isLength({ min: 6 }),
 ],async (req,res)=>{
-    console.log(req.body);
-    
+   let  success =  false;
     // if there are errors, return Bad request and Errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ success,errors: errors.array() });
     }
 
     // check whether user with email is already exists or not
@@ -50,7 +48,8 @@ router.post('/createuser', [
         }
       }
       const authToken = jwt.sign(data,JWT_SECRET);
-      res.json({authToken});
+      success = true;
+      res.json({success,authToken});
       
       // sending a user
       // res.json(user)
@@ -66,7 +65,6 @@ router.post('/login', [
 body('email', 'Enter a valid Email').isEmail(),
 body('password', 'Password cannot be blank').exists()
 ],async (req,res)=>{
-  
   let  success =  false;
   // if there are errors, return Bad request and Errors
   const errors = validationResult(req);
