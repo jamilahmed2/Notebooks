@@ -18,20 +18,20 @@ const Login = (props) => {
         body: JSON.stringify({email:credentials.email,password:credentials.password})
       });
       const json = await response.json(); 
-      console.log(json)
+      console.log(json);
       if(json.success){
         // save the authtoken and redirect
-        localStorage.setItem('token',json.authtoken)
-        navigate('/')
-        props.showAlert("Logged in Successfully","success")
+        localStorage.setItem('token',json.authToken);
+        props.showAlert("Logged in Successfully","success");
+        navigate('/');
       }else{
-        props.showAlert("Invalid Details","danger")
+        props.showAlert("Invalid Details","danger");
       }
-    }
+    };
 
     const onChange =(e)=>{
-        setCredentials({...credentials, [e.target.name]: e.target.value})
-    }
+        setCredentials({...credentials, [e.target.name]: e.target.value});
+    };
   return (
     <div>
         <form onSubmit={handleLogin}>
@@ -41,7 +41,7 @@ const Login = (props) => {
   </div>
   <div className="mb-3">
     <label htmlFor="password" className="form-label">Password</label>
-    <input type="password" className="form-control" id="passwod"name='password' value={credentials.password}  onChange={onChange}/>
+    <input type="password" className="form-control" id="passwod"name='password' value={credentials.password} autoComplete="none"  onChange={onChange}/>
   </div>
   <button type="submit" className="btn btn-primary" >Login</button>
 </form>

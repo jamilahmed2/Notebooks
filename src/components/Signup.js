@@ -24,8 +24,8 @@ const Signup = (props) => {
     if(json.success){
       // save the authtoken and redirect
       localStorage.setItem('token',json.authtoken)
-      navigate('/login')
       props.showAlert("Account Creadted Successfully","success")
+      navigate('/login')
     }else{
       props.showAlert("Invalid Credentials","danger")
     }

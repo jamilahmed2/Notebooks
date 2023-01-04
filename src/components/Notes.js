@@ -2,13 +2,19 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import noteContext from "../context/notes/noteContext";
 import { Addnote } from "./Addnote";
 import Noteitem from "./Noteitem";
-
+import {  useNavigate } from 'react-router-dom'
 
 const Notes = (props) => {
   const context = useContext(noteContext);
+  let navigate = useNavigate();
   const { notes,getNotes, editNote} = context;
   useEffect(() => {
-    getNotes()
+    if(localStorage.getItem('token')){
+      getNotes()
+    }
+    else{
+      navigate('/login')
+    }
     // eslint-disable-next-line
   }, [])
   const ref = useRef(null)
@@ -17,21 +23,19 @@ const Notes = (props) => {
   
   const updateNote =(currentNote)=>{
     ref.current.click();
-    setNote({id:currentNote._id,etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag,})
-    
-  }
+    setNote({id:currentNote._id,etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag,});
+  };
   
       const handleClick = (e)=>{
         // console.log('Updating note...' ,note)
         e.preventDefault();
         editNote(note.id,note.etitle,note.edescription,note.etag);
         refClose.current.click();
-        props.showAlert("Updated Successfully","success")
-    }
+        props.showAlert("Updated Successfully","success");
+    };
     const onChange =(e)=>{
         setNote({...note, [e.target.name]: e.target.value})
-    }
-
+    };
   return (
     <>
     <Addnote showAlert={props.showAlert}/>
@@ -71,15 +75,19 @@ const Notes = (props) => {
             </div>
           </div>
     {/*  */}
-    <div className="container row my-2">
-      <h1>Your Note</h1>
-      <div className=" mx-3">
-      {notes.length===0 && "No notes to display"}
-      </div>
-      {notes.map((note) => {
-        return <Noteitem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert} />;
-      })}
-    </div>
+    <div className="row my-3">
+                <h2>Your Notes</h2>
+                  <div className="container mx-2"> 
+                    {notes.length===0 && 'No notes to display'}
+                  </div>
+               {notes.map(note =>{
+                 return <Noteitem key={note._id} updateNote={updateNote} note={note} />
+                })};
+               {/* {notes.map = (note)=>{
+                   <Noteitem key={note._id} updateNote={updateNote} note={note} />;
+                }}; */}
+            </div>
+           
     </>
   );
 };
