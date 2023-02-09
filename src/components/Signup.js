@@ -4,7 +4,7 @@ import {  useNavigate } from 'react-router-dom'
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({name:"",email:"",password:""})
   let navigate = useNavigate();
-  const url = 'http://localhost:5000'
+  const url = 'https://notebooks-react-app.herokuapp.com'
 
   // signup handle
   const handleSignup = async (e)=>{

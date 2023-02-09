@@ -1,11 +1,12 @@
-
 const mongoose = require('mongoose');
+const dotenv = require('dotenv')
+
+dotenv.config()
 mongoose.set('strictQuery', true);
 
-const mongoURI = "mongodb://127.0.0.1:27017/notebooks"
 
 const connectToMongo = ()=>{
-    mongoose.connect(mongoURI, ()=>{
+    mongoose.connect(process.env.MONGO_URL, ()=>{
         console.log("Connected to Mongo Successfully");
     })
 }

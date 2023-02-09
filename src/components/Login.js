@@ -4,7 +4,7 @@ import {  useNavigate } from 'react-router-dom'
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email:"",password:""})
     let navigate = useNavigate();
-    const url = 'http://localhost:5000'
+    const url = 'https://notebooks-react-app.herokuapp.com'
 
     // login handle
     const handleLogin = async (e)=>{
@@ -18,7 +18,7 @@ const Login = (props) => {
         body: JSON.stringify({email:credentials.email,password:credentials.password})
       });
       const json = await response.json(); 
-      console.log(json);
+      // console.log(json);
       if(json.success){
         // save the authtoken and redirect
         localStorage.setItem('token',json.authToken);
