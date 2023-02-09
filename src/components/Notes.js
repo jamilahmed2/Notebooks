@@ -75,14 +75,14 @@ const Notes = (props) => {
             </div>
           </div>
     {/*  */}
-    <div className="row my-3">
-                <h2 style={{color:"#f2f2f2"}}>Your Notes</h2>
+    <div className="row my-3 bg-dark rounded text-primary">
+                <h2 >Your Notes</h2>
                   <div className="container mx-2"> 
                     {notes.length===0 && 'No notes to display'}
                   </div>
                {notes.map(note =>{
                  return <Noteitem key={note._id} updateNote={updateNote} note={note} />
-                })};
+                })}
                {/* {notes.map = (note)=>{
                    <Noteitem key={note._id} updateNote={updateNote} note={note} />;
                 }}; */}
